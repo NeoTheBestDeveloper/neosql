@@ -1,0 +1,64 @@
+[tool.poetry]
+name = "neosql"
+version = "0.1.0"
+description = ""
+authors = ["NeoTheBestDeveloper <neothebestmain@protonmail.com>"]
+readme = "README.md"
+license = "GPLv3"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Operating System :: POSIX :: Linux',
+    'Operating System :: Microsoft :: Windows :: Windows 10',
+    'Development Status :: 2 - Pre-Alpha',
+    'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+]
+include = ["_neosql_core.so"]
+keywords = ["sql", "database"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+
+[tool.poetry.group.dev.dependencies]
+meson = "^1.1.1"
+pytest = "^7.3.2"
+pylint = "^2.17.4"
+ruff = "^0.0.274"
+black = "^23.3.0"
+pyright = "^1.1.315"
+mypy = "^1.4.0"
+pre-commit = "^3.3.3"
+commitizen = "^3.4.0"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.0.1"
+tag_format = "$version"
+
+[tool.pylint]
+max-line-length = 120
+disable = [
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "missing-module-docstring",
+    "too-few-public-methods",
+    "cyclic-import",
+    "unspecified-encoding",
+    "redefined-outer-name",
+    "useless-return",
+    "W0511",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310,py311"
+
+[tool.black]
+color = true
+line-length = 120
+
+[tool.mypy]
+python_version = '>=3.10'
+
+[tool.pyright]
