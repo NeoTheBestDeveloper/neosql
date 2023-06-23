@@ -1,10 +1,10 @@
 [tool.poetry]
 name = "neosql"
-version = "0.1.0"
+version = "0.0.1"
 description = ""
 authors = ["NeoTheBestDeveloper <neothebestmain@protonmail.com>"]
 readme = "README.md"
-license = "GPLv3"
+license = "MIT"
 classifiers = [
     "Programming Language :: Python :: 3",
     'Programming Language :: Python :: 3.10',
@@ -14,7 +14,7 @@ classifiers = [
     'Development Status :: 2 - Pre-Alpha',
     'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
 ]
-include = ["_neosql_core.so"]
+include = ["_neosql_core.so", "_neosql_core.dll"]
 keywords = ["sql", "database"]
 
 [tool.poetry.dependencies]
