@@ -52,6 +52,7 @@ class NeosqlCore(metaclass=SingletonMeta):
         self._clib.driver_open_db.argtypes = (c_int32,)
 
         self._clib.driver_free.argtypes = (POINTER(DriverStruct),)
+        self._clib.driver_free.restype = None
 
     def __getattribute__(self, __name: str) -> Any:
         """If attribute is FuncPointer return it from _clib."""

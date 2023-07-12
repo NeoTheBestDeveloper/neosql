@@ -25,13 +25,14 @@ def test_connection_create_db(tmp_path, zero_db_content):
         AddrStruct(-1, -1),
         AddrStruct(-1, -1),
         1,
-        StorageType.STORAGE_TYPE_LIST.value,
+        StorageType.STORAGE_TYPE_LIST,
     )
 
     assert conn.alive
     assert conn._path == db_path
     assert conn._driver._cdriver.fd == conn._fd
     assert conn._driver._cdriver.header == default_header
+
     conn.close()
     assert not conn.alive
 
@@ -44,17 +45,18 @@ def test_connection_open_db(tmp_path):
     shutil.copy(ASSETS_PATH / "tree_tables_db.db", db_path)
     conn = Connection(db_path)
 
-    default_header = HeaderStruct(
+    header = HeaderStruct(
         AddrStruct(0, 0),
         AddrStruct(0, 104),
         1,
-        StorageType.STORAGE_TYPE_LIST.value,
+        StorageType.STORAGE_TYPE_LIST,
     )
 
     assert conn.alive
     assert conn._path == db_path
     assert conn._driver._cdriver.fd == conn._fd
-    assert conn._driver._cdriver.header == default_header
+    assert conn._driver._cdriver.header == header
+
     conn.close()
     assert not conn.alive
 
