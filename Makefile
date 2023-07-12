@@ -3,3 +3,7 @@ clean:
 
 build:
 	sh scripts/release.sh
+
+test:
+	sh scripts/release.sh
+	pytest -sv

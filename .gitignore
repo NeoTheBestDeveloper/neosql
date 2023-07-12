@@ -1,2 +1,5 @@
 dist
 neosql-core
+*.so 
+*.dll
+__pycache__
